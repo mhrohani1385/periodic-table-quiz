@@ -54,16 +54,18 @@ elements = {
 }
 
 quested = {}
-resume = True
 
 def main():
-
+    
+    resume = True
     list = []
 
     for z, name in elements.items():
         list.append((z, name,))
 
     def check(indexInList : int):
+        global resume
+
         element = list[indexInList]
         name = input(str(element[0]) + " : ")
         if name == "quit" :

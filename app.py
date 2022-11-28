@@ -1,6 +1,5 @@
 import random
 
-
 elements = {
     1   : "H",
     2   : "He",
@@ -99,10 +98,4 @@ def main():
             break
 
 if __name__ == '__main__':
-    try:
-        main()
-    except Exception:
-        try:
-            sys.exit(0)
-        except SystemExit:
-            os._exit(0)
+    main()

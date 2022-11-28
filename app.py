@@ -54,6 +54,7 @@ elements = {
 }
 
 quested = {}
+resume = True
 
 def main():
 
@@ -67,24 +68,26 @@ def main():
         name = input(str(element[0]) + " : ")
         if name == "quit" :
             print("Your score : " + str(len(quested)))
-        if name == element[1] :
-            print("Currect !")
-            quested[indexInList] = 1
+            resume = False
         else :
-            if indexInList in quested.keys():
-                quested[indexInList] += 1
-            else:
+            if name == element[1] :
+                print("Currect !")
                 quested[indexInList] = 1
-            
-            if quested[indexInList] == 2:
-                print(str(element[0]) + " : " + element[1])
-                print("----------------------------------")
-                quested.pop(indexInList)
-            else:
-                print("Wrong ! Try again :")
-                check(indexInList)
+            else :
+                if indexInList in quested.keys():
+                    quested[indexInList] += 1
+                else:
+                    quested[indexInList] = 1
+                
+                if quested[indexInList] == 2:
+                    print(str(element[0]) + " : " + element[1])
+                    print("----------------------------------")
+                    quested.pop(indexInList)
+                else:
+                    print("Wrong ! Try again :")
+                    check(indexInList)
 
-    while(True) :
+    while(resume) :
         allFound = True
         randindex = random.randint(0, len(list) - 1)
         if randindex not in quested.keys():

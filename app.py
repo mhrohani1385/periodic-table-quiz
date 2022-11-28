@@ -54,10 +54,10 @@ elements = {
 }
 
 quested = {}
+resume = True
 
 def main():
     
-    resume = True
     list = []
 
     for z, name in elements.items():

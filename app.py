@@ -57,6 +57,16 @@ quested = {}
 resume = True
 
 def main():
+
+    print(
+        """
+    Welcome to periodic table main elements quiz !
+    https://github.com/mhrohani1385/periodic-table-quiz
+         
+    You can use \"quit\" as answer of a question to exit program .
+
+-------------------------------------------------------------------
+        """)
     
     list = []
 
@@ -69,25 +79,25 @@ def main():
         element = list[indexInList]
         name = input(str(element[0]) + " : ")
         if name == "quit" :
-            print("Your score : " + str(len(quested)))
+            print("\nYour score : " + str(len(quested)))
             resume = False
         else :
             if name == element[1] :
-                print("Currect !")
+                print("Correct !")
                 quested[indexInList] = 1
+                print("----------------------------------")
             else :
                 if indexInList in quested.keys():
                     quested[indexInList] += 1
                 else:
                     quested[indexInList] = 1
-                
+                print("Wrong !")
                 if quested[indexInList] == 2:
                     print(str(element[0]) + " : " + element[1])
-                    print("----------------------------------")
                     quested.pop(indexInList)
                 else:
-                    print("Wrong ! Try again :")
                     check(indexInList)
+                    print("----------------------------------")
 
     while(resume) :
         allFound = True

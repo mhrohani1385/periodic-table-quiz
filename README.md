@@ -1,5 +1,14 @@
 # Periodic table main elements quiz
-### A command line quiz application for 50 main elements of periodic table , for better learning !
+### A command line quiz program for 50 main elements of periodic table , for better learning !
+
+### How to use :
+> Z : Element symbol
+>> For example :  
+>>> 1 : H  
+>>> 2 : He  
+>>> 3 : Li
+
+You can use \"quit\" as answer of a question to exit program.
 
 ### Run
 [Click to run online in browser !](https://www.online-python.com/cSbKe31Dan)
